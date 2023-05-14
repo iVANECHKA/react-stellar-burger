@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    text-align: left;
+    width: 100%;
+    max-width: 640px;
+    min-height: 64px;
+  }
+  
+  .image {
+    height: 240px;
+  }
+  
+  .info {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .infoItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }

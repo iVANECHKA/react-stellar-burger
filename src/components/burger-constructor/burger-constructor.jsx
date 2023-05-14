@@ -2,7 +2,7 @@ import {Button, ConstructorElement, DragIcon, CurrencyIcon} from "@ya.praktikum/
 import PropTypes from 'prop-types';
 import styles from "./burger-constructor.module.css";
 
-function BurgerConstructor({data}) {
+function BurgerConstructor({data, handleOrderDetailsOpen}) {
     return (
         <section
             className={'pt-25 pl-4 pr-4'}
@@ -69,7 +69,7 @@ function BurgerConstructor({data}) {
                     <p className="text text_type_digits-medium">{610}</p>
                     <CurrencyIcon type="TIconTypes" />
                 </div>
-                <Button type="primary" size="large" htmlType="submit">
+                <Button type="primary" size="large" htmlType="submit" onClick={handleOrderDetailsOpen}>
                     Оформить заказ
                 </Button>
             </div>
