@@ -1,6 +1,7 @@
 import styles from "./burger-ingredients.module.css";
 import Tabs from "../tabs/tabs.jsx";
 import Ingredient from "../ingredient/ingredient";
+import PropTypes from 'prop-types';
 function BurgerIngredients({ data }) {
 
     return (
@@ -62,5 +63,25 @@ function BurgerIngredients({ data }) {
         </section>
     )
 }
+
+
+const ingredientPropTypes = PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    calories: PropTypes.number.isRequired,
+    proteins: PropTypes.number.isRequired,
+    fat: PropTypes.number.isRequired,
+    carbohydrates: PropTypes.number.isRequired,
+    image_large: PropTypes.string,
+    image_mobile: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    type: PropTypes.oneOf(["bun", "sauce", "main"]).isRequired,
+    _id: PropTypes.string.isRequired,
+    _v: PropTypes.number,
+  });
+
+BurgerIngredients.propTypes = {
+    data: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+  };
 
 export default BurgerIngredients;
