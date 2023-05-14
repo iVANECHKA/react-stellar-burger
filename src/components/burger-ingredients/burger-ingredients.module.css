@@ -1,0 +1,26 @@
+.wrapper {
+    max-width: 600px;
+    height: 912px;
+  }
+  
+  .ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow-y: scroll;
+    max-height: 716px;
+  }
+  
+  .ingredientType {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .ingredientWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    box-sizing: border-box;
+    max-width: 568px;
+  }
