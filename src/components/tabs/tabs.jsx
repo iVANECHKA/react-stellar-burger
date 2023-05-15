@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import PropTypes from 'prop-types';
 function Tabs() {
     
     const tabsData = [
@@ -19,5 +20,14 @@ function Tabs() {
         </div>
     );
 }
+
+Tabs.propTypes = {
+    tabData: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  };
 
 export default Tabs;

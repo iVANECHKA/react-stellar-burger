@@ -1,5 +1,6 @@
 import styles from "./order-details.module.css";
 import orderAcceptedImage from "../../images/order-accepted.svg";
+import PropTypes from 'prop-types';
 
 
 function OrderDetails({ orderID }) {
@@ -14,5 +15,8 @@ function OrderDetails({ orderID }) {
   )
 }
 
+OrderDetails.propTypes = {
+  orderID: PropTypes.string.isRequired,
+};
 
 export default OrderDetails;

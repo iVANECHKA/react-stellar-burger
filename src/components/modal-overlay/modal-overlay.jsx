@@ -1,34 +1,31 @@
 import React from "react";
 import styles from "./modal-overlay.module.css";
+import PropTypes from 'prop-types';
 
 
 function ModalOverlay({ onClose }) {
 
   React.useEffect(() => {
-    
-    window.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
-        onClose();
-    }});
 
-    window.addEventListener('click', (e) => {
+    function closeByEscape(e) {
+      if(e.key === 'Escape') {
+        onClose();
+      }
+    }
+    
+    document.addEventListener('keydown', closeByEscape);
+
+    function closeByOverlayClick(e) {
       if (e.target.classList.contains(styles.overlay)) {
         onClose();
       }
-    });
+    }
+    
+    document.addEventListener('click', closeByOverlayClick);
 
     return () => {
-      window.removeEventListener('keydown', (e) => {
-        if (e.key === "Escape") {
-          onClose();
-      }});
-
-
-      window.removeEventListener('click', (e) => {
-        if (e.target.classList.contains(styles.overlay)) {
-          onClose();
-        }
-      });
+      document.removeEventListener('keydown', closeByEscape);
+      document.removeEventListener('click', closeByOverlayClick);
     };
   }, [onClose]);
 
@@ -40,5 +37,8 @@ function ModalOverlay({ onClose }) {
   );
 }
 
+ModalOverlay.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
 
 export default ModalOverlay;

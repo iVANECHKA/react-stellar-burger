@@ -1,6 +1,10 @@
 import styles from "./burger-ingredients.module.css";
 import Tabs from "../tabs/tabs.jsx";
 import Ingredient from "../ingredient/ingredient";
+import PropTypes, { func } from 'prop-types';
+import ingredientPropTypes from '../../utils/prop-types.js';
+
+
 function BurgerIngredients({ data, handleIngredientDetails }) {
 
     return (
@@ -71,5 +75,9 @@ function BurgerIngredients({ data, handleIngredientDetails }) {
     )
 }
 
+BurgerIngredients.propTypes = {
+    data: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+    handleIngredientDetails: func.isRequired,
+  };
 
 export default BurgerIngredients;
