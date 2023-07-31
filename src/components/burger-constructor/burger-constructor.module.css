@@ -1,0 +1,45 @@
+  .ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 656px;
+    box-sizing: border-box;
+
+  }
+
+  .ingredientsTop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 0 0 32px;
+    margin: 0;
+  }
+
+  .ingredientsCenter {
+    composes: ingredientsTop;
+    padding: 0;
+    overflow-y: scroll;
+  }
+
+  .ingredientsBottom {
+    composes: ingredientsTop;
+  }
+
+
+  .dragDots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .totalPriceWrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  .totalPrice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
