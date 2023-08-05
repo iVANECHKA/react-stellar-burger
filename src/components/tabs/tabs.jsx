@@ -1,19 +1,16 @@
-import { useState } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-function Tabs() {
+import { useSelector } from "react-redux";
+import { getTabsNavigation } from "../../services/store-selectors.js";
+function Tabs({tabData, onTabClick}) {
     
-    const tabsData = [
-        'Булки',
-        'Соусы',
-        'Начинки'
-    ];
-    const [current, setCurrent] = useState(tabsData[0]);
+
+    const { activeTab } = useSelector(getTabsNavigation);
     
     return (
         <div style={{display: 'flex'}}>
-            {tabsData.map((tab) => (
-                <Tab key={tab} value={tab} active={current === tab} onClick={setCurrent}>
-                    {tab}
+            {tabData.map((tab) => (
+                <Tab key={tab.value} value={tab.value} active={activeTab === tab.value} onClick={() => onTabClick(tab.value)}>
+                    {tab.label}
                 </Tab>
             ))}
         </div>
