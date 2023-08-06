@@ -3,6 +3,7 @@ import styles from './ingredient.module.css';
 import { useDrag } from 'react-dnd';
 import { useSelector } from 'react-redux';
 import { getCurrentIngredients } from "../../services/store-selectors.js";
+import PropTypes from 'prop-types';
 
 
 function Ingredient({ item, onClick }) {
@@ -31,5 +32,14 @@ function Ingredient({ item, onClick }) {
 
 }
 
+Ingredient.propTypes = {
+  item: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default Ingredient;

@@ -1,6 +1,6 @@
 import styles from "./order-details.module.css";
 import orderAcceptedImage from "../../images/order-accepted.svg";
-
+import PropTypes from 'prop-types';
 
 function OrderDetails({ orderNumber }) {
   return (
@@ -13,5 +13,9 @@ function OrderDetails({ orderNumber }) {
     </div>
   )
 }
+
+OrderDetails.propTypes = {
+  orderNumber: PropTypes.number.isRequired,
+};
 
 export default OrderDetails;

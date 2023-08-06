@@ -1,10 +1,11 @@
 import {
   Button,
   ConstructorElement,
-  CurrencyIcon
+  CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from "./burger-constructor.module.css";
 import PropTypes from 'prop-types';
+import iconPropTypes from '../app-header/app-header.jsx';
 import { ingredientsSlice } from "../../services/ingredients-slice";
 import { useSelector, useDispatch } from "react-redux";
 import { useCallback } from "react";
@@ -134,6 +135,8 @@ function BurgerConstructor({ handleOrderDetailsOpen }) {
 BurgerConstructor.propTypes = {
   handleOrderDetailsOpen: PropTypes.func.isRequired,
 };
+
+CurrencyIcon.propTypes = iconPropTypes;
 
 
 export default BurgerConstructor;

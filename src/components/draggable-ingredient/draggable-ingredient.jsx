@@ -79,7 +79,7 @@ DraggableIngredient.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,   
   }).isRequired,
   handleClose: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,

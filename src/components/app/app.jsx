@@ -72,7 +72,11 @@ function App() {
   const modal = isModalOpen && orderDetailsOpen && order ?
     (
       <Modal onClose={handleOrderDetailsClose}>
-        <OrderDetails orderNumber={order.number} />
+        {order.loading ? (
+          <p>Загрузка...</p>
+        ) : (
+          <OrderDetails orderNumber={order.number} />
+        )}
       </Modal>
     ) : isModalOpen && ingredientDetailOpen ?
       (
@@ -80,6 +84,7 @@ function App() {
           <IngredientDetails ingredient={selectedIngredient} />
         </Modal>
       ) : null;
+
 
 
 

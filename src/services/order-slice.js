@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { checkResponse } from "../utils/check-response";
 
 export const orderSlice = createSlice({
   name: "data",
@@ -51,12 +52,7 @@ export const placeOrder = (api, currentIngredients) => (dispatch) => {
       },
       body: JSON.stringify(body),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+      .then(checkResponse)
       .then((data) => {
         dispatch(fetchOrderSuccess(data.order));
       })
