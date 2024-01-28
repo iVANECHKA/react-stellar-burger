@@ -1,45 +1,69 @@
-  .ingredients {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-height: 656px;
-    box-sizing: border-box;
+.wrapper {
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  }
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  min-height: 656px;
+  max-height: 656px;
+  box-sizing: border-box;
+  transition: outline-color 0.3s ease;
+}
 
-  .ingredientsTop {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0 0 0 32px;
-    margin: 0;
-  }
+.ingredientsHover {
+  outline: 2px solid rgb(117,38,195);
+}
 
-  .ingredientsCenter {
-    composes: ingredientsTop;
-    padding: 0;
-    overflow-y: scroll;
-  }
+.ingredientsTop {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0 0 0 32px;
+  margin: 0;
+  list-style: none;
+}
 
-  .ingredientsBottom {
-    composes: ingredientsTop;
-  }
+.ingredientsCenter {
+  padding: 0;
+  overflow-y: scroll;
+  margin: 0;
+}
 
+.ingredientsBottom {
+  margin: 0;
+}
 
-  .dragDots {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-  .totalPriceWrapper {
-    display: flex;
-    justify-content: flex-end;
-    gap: 40px;
-  }
+.listElement {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-  .totalPrice {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.totalPrice {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  box-sizing: border-box;
+  min-height: 64px;
+}
+
+.totalPriceText {
+  display: flex;
+  max-width: 568px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 100%;
+}

@@ -1,0 +1,18 @@
+.listElement {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 16px;
+}
+
+.listElement:last-child {
+  margin-bottom: 0;
+}
+
+.isDragging {
+  border: 2px solid rgb(117,38,195);
+  opacity: 0.5;
+}

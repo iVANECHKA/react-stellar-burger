@@ -34,6 +34,11 @@
     background-image: url("../../images/close-button.svg");
     background-repeat: no-repeat;
     background-position: center;
+    transition: .1s ease;
+}
+
+.closeBtn:hover {
+    opacity: .6;  
 }
 
 
